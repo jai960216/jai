@@ -75,12 +75,12 @@ class ShoppingMall {
       if (quantityInput == null || quantityInput.isEmpty) {
         throw FormatException();
       }
-      int quantity = int.parse(quantityInput);
-      if (quantity <= 0) {
+      int quant = int.parse(quantityInput);
+      if (quant <= 0) {
         print("0개보다 많은 개수의 상품만 담을 수 있어요 !");
         return;
       }
-      totalPrice += selectedProduct.price * quantity;
+      totalPrice += selectedProduct.price * quant;
       print("장바구니에 상품이 담겼어요 !");
     } catch (e) {
       print("입력값이 올바르지 않아요 !");
