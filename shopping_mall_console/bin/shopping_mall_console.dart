@@ -1,19 +1,20 @@
+import 'dart:convert';
 import 'dart:io';
 
 void main() {
   ShoppingMall mall = ShoppingMall([
     Product("shirt", 45000),
-    Product("원피스", 30000),
-    Product("반팔티", 35000),
-    Product("반바지", 38000),
-    Product("양말", 5000),
+    Product("one piece dress", 30000),
+    Product("short t-shirt", 35000),
+    Product("short pants", 38000),
+    Product("socks", 5000),
   ]);
 
   while (true) {
     print("");
     print("[1] 상품 목록 보기 / [2] 장바구니에 담기 / [3] 총 가격 보기 / [4] 종료");
     stdout.write("원하는 기능의 번호를 입력하세요: ");
-    String? input = stdin.readLineSync();
+    String? input = stdin.readLineSync(encoding: Encoding.getByName("utf-8")!);
 
     if (input == "1") {
       mall.showProducts();
